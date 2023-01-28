@@ -30,8 +30,8 @@
         {
             this.loginMainPanel = new System.Windows.Forms.Panel();
             this.loginTopPanel = new System.Windows.Forms.Panel();
+            this.labelCloseLoginFormBottom = new System.Windows.Forms.Label();
             this.labelLoginTopPanel = new System.Windows.Forms.Label();
-            this.labelCloseLoginForm = new System.Windows.Forms.Label();
             this.loginMainPanel.SuspendLayout();
             this.loginTopPanel.SuspendLayout();
             this.SuspendLayout();
@@ -50,13 +50,32 @@
             // 
             this.loginTopPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.loginTopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(101)))), ((int)(((byte)(201)))));
-            this.loginTopPanel.Controls.Add(this.labelCloseLoginForm);
+            this.loginTopPanel.Controls.Add(this.labelCloseLoginFormBottom);
             this.loginTopPanel.Controls.Add(this.labelLoginTopPanel);
             this.loginTopPanel.Location = new System.Drawing.Point(0, 0);
             this.loginTopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.loginTopPanel.Name = "loginTopPanel";
             this.loginTopPanel.Size = new System.Drawing.Size(633, 101);
             this.loginTopPanel.TabIndex = 0;
+            // 
+            // labelCloseLoginFormBottom
+            // 
+            this.labelCloseLoginFormBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCloseLoginFormBottom.AutoSize = true;
+            this.labelCloseLoginFormBottom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelCloseLoginFormBottom.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCloseLoginFormBottom.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.labelCloseLoginFormBottom.Location = new System.Drawing.Point(593, 0);
+            this.labelCloseLoginFormBottom.Name = "labelCloseLoginFormBottom";
+            this.labelCloseLoginFormBottom.Size = new System.Drawing.Size(37, 39);
+            this.labelCloseLoginFormBottom.TabIndex = 1;
+            this.labelCloseLoginFormBottom.Text = "X";
+            this.labelCloseLoginFormBottom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCloseLoginFormBottom.Click += new System.EventHandler(this.labelCloseLoginForm_Click);
+            this.labelCloseLoginFormBottom.MouseLeave += new System.EventHandler(this.labelCloseLoginFormBottom_MouseLeave);
+            this.labelCloseLoginFormBottom.MouseHover += new System.EventHandler(this.labelCloseLoginForm_MouseHover);
             // 
             // labelLoginTopPanel
             // 
@@ -74,23 +93,6 @@
             this.labelLoginTopPanel.Text = "Авторизация";
             this.labelLoginTopPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelLoginTopPanel.Click += new System.EventHandler(this.labelLoginTopPanel_Click);
-            // 
-            // labelCloseLoginForm
-            // 
-            this.labelCloseLoginForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCloseLoginForm.AutoSize = true;
-            this.labelCloseLoginForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelCloseLoginForm.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCloseLoginForm.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.labelCloseLoginForm.Location = new System.Drawing.Point(593, 0);
-            this.labelCloseLoginForm.Name = "labelCloseLoginForm";
-            this.labelCloseLoginForm.Size = new System.Drawing.Size(37, 39);
-            this.labelCloseLoginForm.TabIndex = 1;
-            this.labelCloseLoginForm.Text = "X";
-            this.labelCloseLoginForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelCloseLoginForm.Click += new System.EventHandler(this.labelCloseLoginForm_Click);
             // 
             // loginForm
             // 
@@ -112,6 +114,6 @@
         private System.Windows.Forms.Panel loginMainPanel;
         private System.Windows.Forms.Panel loginTopPanel;
         private System.Windows.Forms.Label labelLoginTopPanel;
-        private System.Windows.Forms.Label labelCloseLoginForm;
+        private System.Windows.Forms.Label labelCloseLoginFormBottom;
     }
 }

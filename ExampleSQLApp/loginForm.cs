@@ -27,5 +27,18 @@ namespace ExampleSQLApp
             Console.WriteLine("[!] Form <" + this.Text + "> closed by user.");
             this.Close();
         }
+
+        private void labelCloseLoginForm_MouseHover(object sender, EventArgs e)
+        {
+            labelCloseLoginFormBottom.ForeColor = Color.Yellow;
+            //            Console.WriteLine("[!] Mouse over <" + labelCloseLoginFormBottom.ForeColor.ToString() + ">.");
+        }
+
+        private void labelCloseLoginFormBottom_MouseLeave(object sender, EventArgs e)
+        {
+            labelCloseLoginFormBottom.ForeColor = Color.LightGray;
+            //            Console.WriteLine("[!] Mouse over <" + labelCloseLoginFormBottom.ForeColor.ToString() + ">.");
+
+        }
     }
 }
