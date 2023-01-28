@@ -16,5 +16,10 @@ namespace ExampleSQLApp
         {
             InitializeComponent();
         }
+
+        private void labelLoginTopPanel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
