@@ -4,14 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ExampleSQLApp.Program;
 
 namespace ExampleSQLApp
 {
     public partial class loginForm : Form
     {
+/*        public AppUserData userData = currentUserData;*/
         public loginForm()
         {
             InitializeComponent();
@@ -24,7 +28,8 @@ namespace ExampleSQLApp
 
         private void labelCloseLoginForm_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("[!] Form <" + this.Text + "> closed by user.");
+/*            Console.WriteLine("[info] Current user's role is: <" + currentUserData.userRole + ">");
+*/            Console.WriteLine("[!] Form <" + this.Text + "> closed by user.");
             this.Close();
         }
 
