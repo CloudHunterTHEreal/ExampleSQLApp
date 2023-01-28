@@ -45,6 +45,8 @@
             this.loginMainPanel.Name = "loginMainPanel";
             this.loginMainPanel.Size = new System.Drawing.Size(636, 372);
             this.loginMainPanel.TabIndex = 0;
+            this.loginMainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseDown);
+            this.loginMainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseMove);
             // 
             // loginTopPanel
             // 

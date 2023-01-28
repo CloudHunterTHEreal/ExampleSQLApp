@@ -40,5 +40,20 @@ namespace ExampleSQLApp
             //            Console.WriteLine("[!] Mouse over <" + labelCloseLoginFormBottom.ForeColor.ToString() + ">.");
 
         }
+
+        Point startPressedLeftButtonPoint;
+        private void loginMainPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            startPressedLeftButtonPoint = new Point(e.X, e.Y);
+        }
+
+        private void loginMainPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - startPressedLeftButtonPoint.X;
+                this.Top += e.Y - startPressedLeftButtonPoint.Y;
+            }
+        }
     }
 }
