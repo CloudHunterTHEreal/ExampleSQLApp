@@ -63,6 +63,26 @@ namespace ExampleSQLApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _211643_checkmark_round_icon {
+            get {
+                object obj = ResourceManager.GetObject("211643_checkmark_round_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211651_close_round_icon {
+            get {
+                object obj = ResourceManager.GetObject("211651_close_round_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7106356_graph_infographic_data_person_element_icon {
             get {
                 object obj = ResourceManager.GetObject("7106356_graph_infographic_data_person_element_icon", resourceCulture);

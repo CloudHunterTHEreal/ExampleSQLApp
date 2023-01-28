@@ -35,13 +35,13 @@ namespace ExampleSQLApp
 
         private void labelCloseLoginForm_MouseHover(object sender, EventArgs e)
         {
-            labelCloseLoginFormBottom.ForeColor = Color.Yellow;
+            labelCloseLoginFormBottom.ForeColor = Color.Red;
             //            Console.WriteLine("[!] Mouse over <" + labelCloseLoginFormBottom.ForeColor.ToString() + ">.");
         }
 
         private void labelCloseLoginFormBottom_MouseLeave(object sender, EventArgs e)
         {
-            labelCloseLoginFormBottom.ForeColor = Color.LightGray;
+            labelCloseLoginFormBottom.ForeColor = Color.FromArgb(193, 191, 198);
             //            Console.WriteLine("[!] Mouse over <" + labelCloseLoginFormBottom.ForeColor.ToString() + ">.");
 
         }
