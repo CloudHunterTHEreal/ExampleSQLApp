@@ -21,5 +21,11 @@ namespace ExampleSQLApp
         {
 
         }
+
+        private void labelCloseLoginForm_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("[!] Form <" + this.Text + "> closed by user.");
+            this.Close();
+        }
     }
 }

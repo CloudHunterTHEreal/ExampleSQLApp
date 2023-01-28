@@ -90,6 +90,7 @@
             this.labelCloseLoginForm.TabIndex = 1;
             this.labelCloseLoginForm.Text = "X";
             this.labelCloseLoginForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCloseLoginForm.Click += new System.EventHandler(this.labelCloseLoginForm_Click);
             // 
             // loginForm
             // 
