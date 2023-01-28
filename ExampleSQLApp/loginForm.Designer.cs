@@ -50,22 +50,24 @@
             this.loginTopPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.loginTopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(101)))), ((int)(((byte)(201)))));
             this.loginTopPanel.Controls.Add(this.labelLoginTopPanel);
-            this.loginTopPanel.Location = new System.Drawing.Point(3, 3);
+            this.loginTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.loginTopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.loginTopPanel.Name = "loginTopPanel";
-            this.loginTopPanel.Size = new System.Drawing.Size(633, 189);
+            this.loginTopPanel.Size = new System.Drawing.Size(633, 101);
             this.loginTopPanel.TabIndex = 0;
             // 
             // labelLoginTopPanel
             // 
             this.labelLoginTopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(101)))), ((int)(((byte)(201)))));
             this.labelLoginTopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelLoginTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelLoginTopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelLoginTopPanel.Font = new System.Drawing.Font("Comic Sans MS", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelLoginTopPanel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.labelLoginTopPanel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelLoginTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.labelLoginTopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.labelLoginTopPanel.Name = "labelLoginTopPanel";
-            this.labelLoginTopPanel.Size = new System.Drawing.Size(633, 131);
+            this.labelLoginTopPanel.Size = new System.Drawing.Size(633, 101);
             this.labelLoginTopPanel.TabIndex = 0;
             this.labelLoginTopPanel.Text = "Авторизация";
             this.labelLoginTopPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
