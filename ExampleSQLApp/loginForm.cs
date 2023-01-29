@@ -72,6 +72,7 @@ namespace ExampleSQLApp
         {
             Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
             Console.WriteLine("[+] Password is: <" + this.fieldPasswordInput.Text + ">.");
+            Close();
         }
     }
 }
