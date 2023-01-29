@@ -63,6 +63,16 @@ namespace ExampleSQLApp
 
         private void fieldUserNameInput_TextChanged(object sender, EventArgs e)
         {
+            this.fieldUserNameInput.ForeColor = Color.Red;
+        }
+
+        private void loginDataEnter_MouseClick(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
+        }
+
+        private void loginDataEnter_Click(object sender, EventArgs e)
+        {
             Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
         }
     }

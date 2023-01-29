@@ -92,6 +92,8 @@
             this.loginDataEnter.Size = new System.Drawing.Size(143, 63);
             this.loginDataEnter.TabIndex = 0;
             this.loginDataEnter.UseVisualStyleBackColor = true;
+            this.loginDataEnter.Click += new System.EventHandler(this.loginDataEnter_Click);
+            this.loginDataEnter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.loginDataEnter_MouseClick);
             // 
             // fieldPasswordInput
             // 
@@ -127,7 +129,6 @@
             this.fieldUserNameInput.TabIndex = 2;
             this.fieldUserNameInput.Text = "Пользователь";
             this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.fieldUserNameInput.TextChanged += new System.EventHandler(this.fieldUserNameInput_TextChanged);
             // 
             // iconUserName
             // 
