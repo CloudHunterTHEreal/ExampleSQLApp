@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.loginMainPanel = new System.Windows.Forms.Panel();
-            this.loginTopPanel = new System.Windows.Forms.Panel();
-            this.labelCloseLoginFormBottom = new System.Windows.Forms.Label();
-            this.labelLoginTopPanel = new System.Windows.Forms.Label();
-            this.fieldUserNameInput = new System.Windows.Forms.TextBox();
-            this.fieldPasswordInput = new System.Windows.Forms.TextBox();
             this.loginButtonsPanel = new System.Windows.Forms.Panel();
             this.loginDataDrop = new System.Windows.Forms.Button();
             this.loginDataEnter = new System.Windows.Forms.Button();
+            this.fieldPasswordInput = new System.Windows.Forms.TextBox();
             this.iconPassword = new System.Windows.Forms.PictureBox();
+            this.fieldUserNameInput = new System.Windows.Forms.TextBox();
             this.iconUserName = new System.Windows.Forms.PictureBox();
+            this.loginTopPanel = new System.Windows.Forms.Panel();
+            this.labelCloseLoginFormBottom = new System.Windows.Forms.Label();
+            this.labelLoginTopPanel = new System.Windows.Forms.Label();
             this.loginMainPanel.SuspendLayout();
-            this.loginTopPanel.SuspendLayout();
             this.loginButtonsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUserName)).BeginInit();
+            this.loginTopPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginMainPanel
@@ -62,6 +62,82 @@
             this.loginMainPanel.TabIndex = 0;
             this.loginMainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseDown);
             this.loginMainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseMove);
+            // 
+            // loginButtonsPanel
+            // 
+            this.loginButtonsPanel.Controls.Add(this.loginDataDrop);
+            this.loginButtonsPanel.Controls.Add(this.loginDataEnter);
+            this.loginButtonsPanel.Location = new System.Drawing.Point(168, 288);
+            this.loginButtonsPanel.Name = "loginButtonsPanel";
+            this.loginButtonsPanel.Size = new System.Drawing.Size(300, 72);
+            this.loginButtonsPanel.TabIndex = 5;
+            // 
+            // loginDataDrop
+            // 
+            this.loginDataDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginDataDrop.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211651_close_round_icon;
+            this.loginDataDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginDataDrop.Location = new System.Drawing.Point(154, 4);
+            this.loginDataDrop.Name = "loginDataDrop";
+            this.loginDataDrop.Size = new System.Drawing.Size(143, 63);
+            this.loginDataDrop.TabIndex = 1;
+            this.loginDataDrop.UseVisualStyleBackColor = true;
+            // 
+            // loginDataEnter
+            // 
+            this.loginDataEnter.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211643_checkmark_round_icon;
+            this.loginDataEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginDataEnter.Location = new System.Drawing.Point(4, 4);
+            this.loginDataEnter.Name = "loginDataEnter";
+            this.loginDataEnter.Size = new System.Drawing.Size(143, 63);
+            this.loginDataEnter.TabIndex = 0;
+            this.loginDataEnter.UseVisualStyleBackColor = true;
+            // 
+            // fieldPasswordInput
+            // 
+            this.fieldPasswordInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.fieldPasswordInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fieldPasswordInput.Location = new System.Drawing.Point(153, 196);
+            this.fieldPasswordInput.Multiline = true;
+            this.fieldPasswordInput.Name = "fieldPasswordInput";
+            this.fieldPasswordInput.Size = new System.Drawing.Size(418, 86);
+            this.fieldPasswordInput.TabIndex = 4;
+            this.fieldPasswordInput.Text = "Пароль";
+            this.fieldPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fieldPasswordInput.UseSystemPasswordChar = true;
+            // 
+            // iconPassword
+            // 
+            this.iconPassword.Image = global::ExampleSQLApp.Properties.Resources._9024815_password_light_icon;
+            this.iconPassword.Location = new System.Drawing.Point(52, 196);
+            this.iconPassword.Name = "iconPassword";
+            this.iconPassword.Size = new System.Drawing.Size(94, 86);
+            this.iconPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPassword.TabIndex = 3;
+            this.iconPassword.TabStop = false;
+            // 
+            // fieldUserNameInput
+            // 
+            this.fieldUserNameInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.fieldUserNameInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fieldUserNameInput.Location = new System.Drawing.Point(153, 104);
+            this.fieldUserNameInput.Multiline = true;
+            this.fieldUserNameInput.Name = "fieldUserNameInput";
+            this.fieldUserNameInput.Size = new System.Drawing.Size(418, 86);
+            this.fieldUserNameInput.TabIndex = 2;
+            this.fieldUserNameInput.Text = "Пользователь";
+            this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fieldUserNameInput.TextChanged += new System.EventHandler(this.fieldUserNameInput_TextChanged);
+            // 
+            // iconUserName
+            // 
+            this.iconUserName.Image = global::ExampleSQLApp.Properties.Resources._7106356_graph_infographic_data_person_element_icon;
+            this.iconUserName.Location = new System.Drawing.Point(52, 104);
+            this.iconUserName.Name = "iconUserName";
+            this.iconUserName.Size = new System.Drawing.Size(94, 86);
+            this.iconUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconUserName.TabIndex = 1;
+            this.iconUserName.TabStop = false;
             // 
             // loginTopPanel
             // 
@@ -111,81 +187,6 @@
             this.labelLoginTopPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelLoginTopPanel.Click += new System.EventHandler(this.labelLoginTopPanel_Click);
             // 
-            // fieldUserNameInput
-            // 
-            this.fieldUserNameInput.BackColor = System.Drawing.Color.Gainsboro;
-            this.fieldUserNameInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fieldUserNameInput.Location = new System.Drawing.Point(153, 104);
-            this.fieldUserNameInput.Multiline = true;
-            this.fieldUserNameInput.Name = "fieldUserNameInput";
-            this.fieldUserNameInput.Size = new System.Drawing.Size(418, 86);
-            this.fieldUserNameInput.TabIndex = 2;
-            this.fieldUserNameInput.Text = "Пользователь";
-            this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // fieldPasswordInput
-            // 
-            this.fieldPasswordInput.BackColor = System.Drawing.Color.Gainsboro;
-            this.fieldPasswordInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fieldPasswordInput.Location = new System.Drawing.Point(153, 196);
-            this.fieldPasswordInput.Multiline = true;
-            this.fieldPasswordInput.Name = "fieldPasswordInput";
-            this.fieldPasswordInput.Size = new System.Drawing.Size(418, 86);
-            this.fieldPasswordInput.TabIndex = 4;
-            this.fieldPasswordInput.Text = "Пароль";
-            this.fieldPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.fieldPasswordInput.UseSystemPasswordChar = true;
-            // 
-            // loginButtonsPanel
-            // 
-            this.loginButtonsPanel.Controls.Add(this.loginDataDrop);
-            this.loginButtonsPanel.Controls.Add(this.loginDataEnter);
-            this.loginButtonsPanel.Location = new System.Drawing.Point(168, 288);
-            this.loginButtonsPanel.Name = "loginButtonsPanel";
-            this.loginButtonsPanel.Size = new System.Drawing.Size(300, 72);
-            this.loginButtonsPanel.TabIndex = 5;
-            // 
-            // loginDataDrop
-            // 
-            this.loginDataDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.loginDataDrop.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211651_close_round_icon;
-            this.loginDataDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.loginDataDrop.Location = new System.Drawing.Point(154, 4);
-            this.loginDataDrop.Name = "loginDataDrop";
-            this.loginDataDrop.Size = new System.Drawing.Size(143, 63);
-            this.loginDataDrop.TabIndex = 1;
-            this.loginDataDrop.UseVisualStyleBackColor = true;
-            // 
-            // loginDataEnter
-            // 
-            this.loginDataEnter.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211643_checkmark_round_icon;
-            this.loginDataEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.loginDataEnter.Location = new System.Drawing.Point(4, 4);
-            this.loginDataEnter.Name = "loginDataEnter";
-            this.loginDataEnter.Size = new System.Drawing.Size(143, 63);
-            this.loginDataEnter.TabIndex = 0;
-            this.loginDataEnter.UseVisualStyleBackColor = true;
-            // 
-            // iconPassword
-            // 
-            this.iconPassword.Image = global::ExampleSQLApp.Properties.Resources._9024815_password_light_icon;
-            this.iconPassword.Location = new System.Drawing.Point(52, 196);
-            this.iconPassword.Name = "iconPassword";
-            this.iconPassword.Size = new System.Drawing.Size(94, 86);
-            this.iconPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconPassword.TabIndex = 3;
-            this.iconPassword.TabStop = false;
-            // 
-            // iconUserName
-            // 
-            this.iconUserName.Image = global::ExampleSQLApp.Properties.Resources._7106356_graph_infographic_data_person_element_icon;
-            this.iconUserName.Location = new System.Drawing.Point(52, 104);
-            this.iconUserName.Name = "iconUserName";
-            this.iconUserName.Size = new System.Drawing.Size(94, 86);
-            this.iconUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconUserName.TabIndex = 1;
-            this.iconUserName.TabStop = false;
-            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -196,11 +197,11 @@
             this.Text = "loginForm";
             this.loginMainPanel.ResumeLayout(false);
             this.loginMainPanel.PerformLayout();
-            this.loginTopPanel.ResumeLayout(false);
-            this.loginTopPanel.PerformLayout();
             this.loginButtonsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUserName)).EndInit();
+            this.loginTopPanel.ResumeLayout(false);
+            this.loginTopPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

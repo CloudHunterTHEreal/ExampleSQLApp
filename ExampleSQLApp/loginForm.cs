@@ -60,5 +60,10 @@ namespace ExampleSQLApp
                 this.Top += e.Y - startPressedLeftButtonPoint.Y;
             }
         }
+
+        private void fieldUserNameInput_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
+        }
     }
 }
