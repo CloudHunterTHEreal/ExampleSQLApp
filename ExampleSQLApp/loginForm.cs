@@ -19,6 +19,8 @@ namespace ExampleSQLApp
         public loginForm()
         {
             InitializeComponent();
+            this.fieldPasswordInput.Size = new Size(this.fieldPasswordInput.Size.Width, 
+                this.fieldUserNameInput.Width);
         }
 
         private void labelLoginTopPanel_Click(object sender, EventArgs e)
@@ -66,14 +68,10 @@ namespace ExampleSQLApp
             this.fieldUserNameInput.ForeColor = Color.Red;
         }
 
-        private void loginDataEnter_MouseClick(object sender, MouseEventArgs e)
-        {
-            Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
-        }
-
         private void loginDataEnter_Click(object sender, EventArgs e)
         {
             Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
+            Console.WriteLine("[+] Password is: <" + this.fieldPasswordInput.Text + ">.");
         }
     }
 }

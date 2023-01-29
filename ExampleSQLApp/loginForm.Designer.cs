@@ -95,16 +95,14 @@
             this.loginDataEnter.TabIndex = 0;
             this.loginDataEnter.UseVisualStyleBackColor = true;
             this.loginDataEnter.Click += new System.EventHandler(this.loginDataEnter_Click);
-            this.loginDataEnter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.loginDataEnter_MouseClick);
             // 
             // fieldPasswordInput
             // 
             this.fieldPasswordInput.BackColor = System.Drawing.Color.Gainsboro;
             this.fieldPasswordInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fieldPasswordInput.Location = new System.Drawing.Point(153, 196);
-            this.fieldPasswordInput.Multiline = true;
             this.fieldPasswordInput.Name = "fieldPasswordInput";
-            this.fieldPasswordInput.Size = new System.Drawing.Size(418, 86);
+            this.fieldPasswordInput.Size = new System.Drawing.Size(418, 62);
             this.fieldPasswordInput.TabIndex = 4;
             this.fieldPasswordInput.Text = "Пароль";
             this.fieldPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
