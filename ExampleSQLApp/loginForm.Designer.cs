@@ -77,6 +77,7 @@
             this.loginDataDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loginDataDrop.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211651_close_round_icon;
             this.loginDataDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginDataDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginDataDrop.Location = new System.Drawing.Point(154, 4);
             this.loginDataDrop.Name = "loginDataDrop";
             this.loginDataDrop.Size = new System.Drawing.Size(143, 63);
@@ -87,6 +88,7 @@
             // 
             this.loginDataEnter.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211643_checkmark_round_icon;
             this.loginDataEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginDataEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginDataEnter.Location = new System.Drawing.Point(4, 4);
             this.loginDataEnter.Name = "loginDataEnter";
             this.loginDataEnter.Size = new System.Drawing.Size(143, 63);
