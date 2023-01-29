@@ -122,7 +122,6 @@
             this.fieldUserNameInput.BackColor = System.Drawing.Color.Gainsboro;
             this.fieldUserNameInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fieldUserNameInput.Location = new System.Drawing.Point(159, 116);
-            this.fieldUserNameInput.Multiline = true;
             this.fieldUserNameInput.Name = "fieldUserNameInput";
             this.fieldUserNameInput.Size = new System.Drawing.Size(418, 62);
             this.fieldUserNameInput.TabIndex = 2;

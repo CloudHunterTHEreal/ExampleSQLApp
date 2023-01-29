@@ -21,6 +21,7 @@ namespace ExampleSQLApp
         {
             InitializeComponent();
 
+            // Set same height for both icons and input fields.
             int LOGIN_FIELDS_HEIGHT = this.iconUserName.Height;
             this.fieldUserNameInput.Size = new Size(this.fieldPasswordInput.Size.Width,
                 LOGIN_FIELDS_HEIGHT);
