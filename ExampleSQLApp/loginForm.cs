@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Policy;
@@ -19,8 +20,12 @@ namespace ExampleSQLApp
         public loginForm()
         {
             InitializeComponent();
-            this.fieldPasswordInput.Size = new Size(this.fieldPasswordInput.Size.Width, 
-                this.fieldUserNameInput.Width);
+
+            int LOGIN_FIELDS_HEIGHT = this.iconUserName.Height;
+            this.fieldUserNameInput.Size = new Size(this.fieldPasswordInput.Size.Width,
+                LOGIN_FIELDS_HEIGHT);
+            this.fieldPasswordInput.Size = new Size(this.fieldPasswordInput.Size.Width,
+                LOGIN_FIELDS_HEIGHT);
         }
 
         private void labelLoginTopPanel_Click(object sender, EventArgs e)

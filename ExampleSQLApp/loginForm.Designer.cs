@@ -58,7 +58,7 @@
             this.loginMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginMainPanel.Location = new System.Drawing.Point(0, 0);
             this.loginMainPanel.Name = "loginMainPanel";
-            this.loginMainPanel.Size = new System.Drawing.Size(636, 372);
+            this.loginMainPanel.Size = new System.Drawing.Size(641, 400);
             this.loginMainPanel.TabIndex = 0;
             this.loginMainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseDown);
             this.loginMainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseMove);
@@ -67,7 +67,7 @@
             // 
             this.loginButtonsPanel.Controls.Add(this.loginDataDrop);
             this.loginButtonsPanel.Controls.Add(this.loginDataEnter);
-            this.loginButtonsPanel.Location = new System.Drawing.Point(168, 288);
+            this.loginButtonsPanel.Location = new System.Drawing.Point(170, 316);
             this.loginButtonsPanel.Name = "loginButtonsPanel";
             this.loginButtonsPanel.Size = new System.Drawing.Size(300, 72);
             this.loginButtonsPanel.TabIndex = 5;
@@ -100,20 +100,19 @@
             // 
             this.fieldPasswordInput.BackColor = System.Drawing.Color.Gainsboro;
             this.fieldPasswordInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fieldPasswordInput.Location = new System.Drawing.Point(153, 196);
+            this.fieldPasswordInput.Location = new System.Drawing.Point(159, 208);
             this.fieldPasswordInput.Name = "fieldPasswordInput";
             this.fieldPasswordInput.Size = new System.Drawing.Size(418, 62);
             this.fieldPasswordInput.TabIndex = 4;
-            this.fieldPasswordInput.Text = "Пароль";
             this.fieldPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.fieldPasswordInput.UseSystemPasswordChar = true;
             // 
             // iconPassword
             // 
             this.iconPassword.Image = global::ExampleSQLApp.Properties.Resources._9024815_password_light_icon;
-            this.iconPassword.Location = new System.Drawing.Point(52, 196);
+            this.iconPassword.Location = new System.Drawing.Point(58, 208);
             this.iconPassword.Name = "iconPassword";
-            this.iconPassword.Size = new System.Drawing.Size(94, 86);
+            this.iconPassword.Size = new System.Drawing.Size(95, 62);
             this.iconPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconPassword.TabIndex = 3;
             this.iconPassword.TabStop = false;
@@ -122,20 +121,19 @@
             // 
             this.fieldUserNameInput.BackColor = System.Drawing.Color.Gainsboro;
             this.fieldUserNameInput.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fieldUserNameInput.Location = new System.Drawing.Point(153, 104);
+            this.fieldUserNameInput.Location = new System.Drawing.Point(159, 116);
             this.fieldUserNameInput.Multiline = true;
             this.fieldUserNameInput.Name = "fieldUserNameInput";
-            this.fieldUserNameInput.Size = new System.Drawing.Size(418, 86);
+            this.fieldUserNameInput.Size = new System.Drawing.Size(418, 62);
             this.fieldUserNameInput.TabIndex = 2;
-            this.fieldUserNameInput.Text = "Пользователь";
             this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // iconUserName
             // 
             this.iconUserName.Image = global::ExampleSQLApp.Properties.Resources._7106356_graph_infographic_data_person_element_icon;
-            this.iconUserName.Location = new System.Drawing.Point(52, 104);
+            this.iconUserName.Location = new System.Drawing.Point(58, 116);
             this.iconUserName.Name = "iconUserName";
-            this.iconUserName.Size = new System.Drawing.Size(94, 86);
+            this.iconUserName.Size = new System.Drawing.Size(95, 62);
             this.iconUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconUserName.TabIndex = 1;
             this.iconUserName.TabStop = false;
@@ -192,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 372);
+            this.ClientSize = new System.Drawing.Size(641, 400);
             this.Controls.Add(this.loginMainPanel);
             this.Name = "loginForm";
             this.Text = "loginForm";
