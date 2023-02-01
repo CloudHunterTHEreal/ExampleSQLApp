@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,14 +12,15 @@ namespace ExampleSQLApp
 {
     internal class DB
     {
-        // Data Source=(localdb)\MSSQLLocalDB;
-        // Initial Catalog=webform_db;
-        // Integrated Security=True;
-        // Connect Timeout=30;Encrypt=False;
-        // TrustServerCertificate=False;
-        // ApplicationIntent=ReadWrite;
-        // MultiSubnetFailover=False
-        SqlConnection connection = new SqlConnection("server=localhost;port=3306;username=root;password=root;database=webform_db");
+        /*Data Source = NOVICE\SQLEXPRESS;
+         * Initial Catalog = miit_local; 
+         * Integrated Security = True; 
+         * Connect Timeout = 30; Encrypt=False;
+         * TrustServerCertificate=False;
+         * ApplicationIntent=ReadWrite;
+         * MultiSubnetFailover=False
+         */
+        SqlConnection connection = new SqlConnection("server=NOVICE\\SQLEXPRESS;port=3306;username=NOVICE\\SQLEXPRESS;password=gfh0km;database=miit_local");
 
         public void openConnection(string connectionString)
         {
