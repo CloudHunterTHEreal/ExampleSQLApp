@@ -30,28 +30,25 @@
         {
             this.loginMainPanel = new System.Windows.Forms.Panel();
             this.loginButtonsPanel = new System.Windows.Forms.Panel();
+            this.loginDataDrop = new System.Windows.Forms.Button();
+            this.loginDataEnter = new System.Windows.Forms.Button();
             this.fieldPasswordInput = new System.Windows.Forms.TextBox();
+            this.iconPassword = new System.Windows.Forms.PictureBox();
             this.fieldUserNameInput = new System.Windows.Forms.TextBox();
+            this.iconUserName = new System.Windows.Forms.PictureBox();
             this.loginTopPanel = new System.Windows.Forms.Panel();
             this.labelCloseLoginFormBottom = new System.Windows.Forms.Label();
             this.labelLoginTopPanel = new System.Windows.Forms.Label();
-            this.loginDataDrop = new System.Windows.Forms.Button();
-            this.loginDataEnter = new System.Windows.Forms.Button();
-            this.iconPassword = new System.Windows.Forms.PictureBox();
-            this.iconUserName = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.loginMainPanel.SuspendLayout();
             this.loginButtonsPanel.SuspendLayout();
-            this.loginTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUserName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.loginTopPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginMainPanel
             // 
             this.loginMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(201)))), ((int)(((byte)(128)))));
-            this.loginMainPanel.Controls.Add(this.dataGridView1);
             this.loginMainPanel.Controls.Add(this.loginButtonsPanel);
             this.loginMainPanel.Controls.Add(this.fieldPasswordInput);
             this.loginMainPanel.Controls.Add(this.iconPassword);
@@ -63,6 +60,7 @@
             this.loginMainPanel.Name = "loginMainPanel";
             this.loginMainPanel.Size = new System.Drawing.Size(641, 400);
             this.loginMainPanel.TabIndex = 0;
+            this.loginMainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginMainPanel_Paint);
             this.loginMainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseDown);
             this.loginMainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseMove);
             // 
@@ -75,6 +73,30 @@
             this.loginButtonsPanel.Size = new System.Drawing.Size(300, 72);
             this.loginButtonsPanel.TabIndex = 5;
             // 
+            // loginDataDrop
+            // 
+            this.loginDataDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginDataDrop.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211651_close_round_icon;
+            this.loginDataDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginDataDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginDataDrop.Location = new System.Drawing.Point(154, 4);
+            this.loginDataDrop.Name = "loginDataDrop";
+            this.loginDataDrop.Size = new System.Drawing.Size(143, 63);
+            this.loginDataDrop.TabIndex = 1;
+            this.loginDataDrop.UseVisualStyleBackColor = true;
+            // 
+            // loginDataEnter
+            // 
+            this.loginDataEnter.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211643_checkmark_round_icon;
+            this.loginDataEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginDataEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginDataEnter.Location = new System.Drawing.Point(4, 4);
+            this.loginDataEnter.Name = "loginDataEnter";
+            this.loginDataEnter.Size = new System.Drawing.Size(143, 63);
+            this.loginDataEnter.TabIndex = 0;
+            this.loginDataEnter.UseVisualStyleBackColor = true;
+            this.loginDataEnter.Click += new System.EventHandler(this.loginDataEnter_Click);
+            // 
             // fieldPasswordInput
             // 
             this.fieldPasswordInput.BackColor = System.Drawing.Color.Gainsboro;
@@ -86,6 +108,16 @@
             this.fieldPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.fieldPasswordInput.UseSystemPasswordChar = true;
             // 
+            // iconPassword
+            // 
+            this.iconPassword.Image = global::ExampleSQLApp.Properties.Resources._9024815_password_light_icon;
+            this.iconPassword.Location = new System.Drawing.Point(58, 208);
+            this.iconPassword.Name = "iconPassword";
+            this.iconPassword.Size = new System.Drawing.Size(95, 62);
+            this.iconPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPassword.TabIndex = 3;
+            this.iconPassword.TabStop = false;
+            // 
             // fieldUserNameInput
             // 
             this.fieldUserNameInput.BackColor = System.Drawing.Color.Gainsboro;
@@ -95,6 +127,17 @@
             this.fieldUserNameInput.Size = new System.Drawing.Size(418, 62);
             this.fieldUserNameInput.TabIndex = 2;
             this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fieldUserNameInput.TextChanged += new System.EventHandler(this.fieldUserNameInput_TextChanged_1);
+            // 
+            // iconUserName
+            // 
+            this.iconUserName.Image = global::ExampleSQLApp.Properties.Resources._7106356_graph_infographic_data_person_element_icon;
+            this.iconUserName.Location = new System.Drawing.Point(58, 116);
+            this.iconUserName.Name = "iconUserName";
+            this.iconUserName.Size = new System.Drawing.Size(95, 62);
+            this.iconUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconUserName.TabIndex = 1;
+            this.iconUserName.TabStop = false;
             // 
             // loginTopPanel
             // 
@@ -144,60 +187,6 @@
             this.labelLoginTopPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelLoginTopPanel.Click += new System.EventHandler(this.labelLoginTopPanel_Click);
             // 
-            // loginDataDrop
-            // 
-            this.loginDataDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.loginDataDrop.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211651_close_round_icon;
-            this.loginDataDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.loginDataDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginDataDrop.Location = new System.Drawing.Point(154, 4);
-            this.loginDataDrop.Name = "loginDataDrop";
-            this.loginDataDrop.Size = new System.Drawing.Size(143, 63);
-            this.loginDataDrop.TabIndex = 1;
-            this.loginDataDrop.UseVisualStyleBackColor = true;
-            // 
-            // loginDataEnter
-            // 
-            this.loginDataEnter.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211643_checkmark_round_icon;
-            this.loginDataEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.loginDataEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginDataEnter.Location = new System.Drawing.Point(4, 4);
-            this.loginDataEnter.Name = "loginDataEnter";
-            this.loginDataEnter.Size = new System.Drawing.Size(143, 63);
-            this.loginDataEnter.TabIndex = 0;
-            this.loginDataEnter.UseVisualStyleBackColor = true;
-            this.loginDataEnter.Click += new System.EventHandler(this.loginDataEnter_Click);
-            // 
-            // iconPassword
-            // 
-            this.iconPassword.Image = global::ExampleSQLApp.Properties.Resources._9024815_password_light_icon;
-            this.iconPassword.Location = new System.Drawing.Point(58, 208);
-            this.iconPassword.Name = "iconPassword";
-            this.iconPassword.Size = new System.Drawing.Size(95, 62);
-            this.iconPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconPassword.TabIndex = 3;
-            this.iconPassword.TabStop = false;
-            // 
-            // iconUserName
-            // 
-            this.iconUserName.Image = global::ExampleSQLApp.Properties.Resources._7106356_graph_infographic_data_person_element_icon;
-            this.iconUserName.Location = new System.Drawing.Point(58, 116);
-            this.iconUserName.Name = "iconUserName";
-            this.iconUserName.Size = new System.Drawing.Size(95, 62);
-            this.iconUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconUserName.TabIndex = 1;
-            this.iconUserName.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(200, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 6;
-            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,11 +198,10 @@
             this.loginMainPanel.ResumeLayout(false);
             this.loginMainPanel.PerformLayout();
             this.loginButtonsPanel.ResumeLayout(false);
-            this.loginTopPanel.ResumeLayout(false);
-            this.loginTopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUserName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.loginTopPanel.ResumeLayout(false);
+            this.loginTopPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -231,6 +219,5 @@
         private System.Windows.Forms.TextBox fieldUserNameInput;
         private System.Windows.Forms.Button loginDataDrop;
         private System.Windows.Forms.Button loginDataEnter;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

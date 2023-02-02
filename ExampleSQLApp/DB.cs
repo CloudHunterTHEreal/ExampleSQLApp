@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 
 
-namespace ExampleSQLApp
+namespace test_DB
 {
-    internal class DB
+    internal class DataBase
     {
         /*Data Source = NOVICE\SQLEXPRESS;
          * Initial Catalog = miit_local; 
@@ -20,7 +20,8 @@ namespace ExampleSQLApp
          * ApplicationIntent=ReadWrite;
          * MultiSubnetFailover=False
          */
-        SqlConnection connection = new SqlConnection("server=NOVICE\\SQLEXPRESS;port=3306;username=NOVICE\\SQLEXPRESS;password=gfh0km;database=miit_local");
+        //        SqlConnection connection = new SqlConnection("server=NOVICE\\SQLEXPRESS;port=3306;username=NOVICE\\SQLEXPRESS;password=gfh0km;database=miit_local");
+        SqlConnection connection = new SqlConnection(@"Data Source = NOVICE\SQLEXPRESS;Initial Catalog=miit_local;Integrated Securty=True");
 
         public void openConnection(string connectionString)
         {

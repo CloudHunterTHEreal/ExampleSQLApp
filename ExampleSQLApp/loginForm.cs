@@ -20,6 +20,7 @@ namespace ExampleSQLApp
         public loginForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
 
             // Set same height for both icons and input fields.
             int LOGIN_FIELDS_HEIGHT = this.iconUserName.Height;
@@ -79,6 +80,16 @@ namespace ExampleSQLApp
             Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
             Console.WriteLine("[+] Password is: <" + this.fieldPasswordInput.Text + ">.");
             Close();
+        }
+
+        private void loginMainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void fieldUserNameInput_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

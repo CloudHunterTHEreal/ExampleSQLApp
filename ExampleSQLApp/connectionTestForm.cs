@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test_DB;
 
 namespace ExampleSQLApp
 {
-    public partial class connectForm : Form
+    public partial class connectionTestForm : Form
     {
-        public connectForm()
+        DataBase  database = new DataBase();
+        public connectionTestForm()
         {
             InitializeComponent();
         }
