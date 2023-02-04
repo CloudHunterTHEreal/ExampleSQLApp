@@ -102,7 +102,7 @@ namespace ExampleSQLApp
 
             if(task_data.Rows.Count == 1)
             {
-                MessageBox.Show("ACCESS GRANTED", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//                MessageBox.Show("ACCESS GRANTED", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connectionTestForm task_data_Form = new connectionTestForm();
                 this.Hide();
                 task_data_Form.ShowDialog();
@@ -110,7 +110,7 @@ namespace ExampleSQLApp
             }
             else
             {
-                MessageBox.Show("Имя или пароль пользователя неверны.", "Unknown user", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Имя или пароль пользователя неверны.", "Доступ запрещён", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (username == null || user_pass == null) {
@@ -118,8 +118,8 @@ namespace ExampleSQLApp
             }
             else
             {
-                Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
-                Console.WriteLine("[+] Password is: <" + this.fieldPasswordInput.Text + ">.");
+                Console.WriteLine("[>] Inputed username: <" + this.fieldUserNameInput.Text + ">");
+                Console.WriteLine("[>] Inputed password: <" + this.fieldPasswordInput.Text + ">");
             }
             Close();
         }
