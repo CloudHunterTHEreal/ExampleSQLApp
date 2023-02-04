@@ -1,0 +1,1 @@
+﻿INSERT INTO examples (lastname, birthday, sex, id) VALUES ('Иванов','1900-01-01','М', 1234567);

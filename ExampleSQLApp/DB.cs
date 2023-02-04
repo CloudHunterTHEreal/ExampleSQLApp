@@ -27,7 +27,7 @@ namespace test_DB
         {
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
-                Console.WriteLine("Connection opened");
+                Console.WriteLine("Connection open");
         }
 
         public void closeConnection(string connectionString)
