@@ -12,16 +12,7 @@ namespace test_DB
 {
     internal class DataBase
     {
-        /*Data Source = NOVICE\SQLEXPRESS;
-         * Initial Catalog = miit_local; 
-         * Integrated Security = True; 
-         * Connect Timeout = 30; Encrypt=False;
-         * TrustServerCertificate=False;
-         * ApplicationIntent=ReadWrite;
-         * MultiSubnetFailover=False
-         */
-        //        SqlConnection connection = new SqlConnection("server=NOVICE\\SQLEXPRESS;port=3306;username=NOVICE\\SQLEXPRESS;password=gfh0km;database=miit_local");
-        SqlConnection connection = new SqlConnection(@"Data Source = NOVICE\SQLEXPRESS;Initial Catalog=miit_local;Integrated Securty=True");
+        readonly SqlConnection connection = new SqlConnection(@"Data Source=novice\sqlexpress;Initial Catalog=miit_local;Integrated Security=True");
 
         public void openConnection(string connectionString)
         {

@@ -25,5 +25,10 @@ namespace ExampleSQLApp
             this.usersTableAdapter.Fill(this.miit_localDataSet.users);
 
         }
+
+        private void users_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.users_dataGridView = new System.Windows.Forms.DataGridView();
             this.nicknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passfraseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.miit_localDataSet = new ExampleSQLApp.miit_localDataSet();
             this.usersTableAdapter = new ExampleSQLApp.miit_localDataSetTableAdapters.usersTableAdapter();
@@ -45,15 +44,15 @@
             this.users_dataGridView.AutoGenerateColumns = false;
             this.users_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.users_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nicknameDataGridViewTextBoxColumn,
-            this.passfraseDataGridViewTextBoxColumn});
+            this.nicknameDataGridViewTextBoxColumn});
             this.users_dataGridView.DataSource = this.usersBindingSource;
             this.users_dataGridView.Location = new System.Drawing.Point(200, 32);
             this.users_dataGridView.Name = "users_dataGridView";
             this.users_dataGridView.RowHeadersWidth = 51;
             this.users_dataGridView.RowTemplate.Height = 24;
-            this.users_dataGridView.Size = new System.Drawing.Size(240, 150);
+            this.users_dataGridView.Size = new System.Drawing.Size(541, 150);
             this.users_dataGridView.TabIndex = 0;
+            this.users_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_dataGridView_CellContentClick);
             // 
             // nicknameDataGridViewTextBoxColumn
             // 
@@ -62,14 +61,6 @@
             this.nicknameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nicknameDataGridViewTextBoxColumn.Name = "nicknameDataGridViewTextBoxColumn";
             this.nicknameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // passfraseDataGridViewTextBoxColumn
-            // 
-            this.passfraseDataGridViewTextBoxColumn.DataPropertyName = "passfrase";
-            this.passfraseDataGridViewTextBoxColumn.HeaderText = "passfrase";
-            this.passfraseDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passfraseDataGridViewTextBoxColumn.Name = "passfraseDataGridViewTextBoxColumn";
-            this.passfraseDataGridViewTextBoxColumn.Width = 125;
             // 
             // usersBindingSource
             // 
@@ -108,6 +99,5 @@
         private System.Windows.Forms.BindingSource usersBindingSource;
         private miit_localDataSetTableAdapters.usersTableAdapter usersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nicknameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passfraseDataGridViewTextBoxColumn;
     }
 }

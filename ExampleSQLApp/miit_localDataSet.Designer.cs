@@ -281,7 +281,7 @@ namespace ExampleSQLApp {
             
             private global::System.Data.DataColumn columnnickname;
             
-            private global::System.Data.DataColumn columnpassfrase;
+            private global::System.Data.DataColumn columnpass_hash;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -326,9 +326,9 @@ namespace ExampleSQLApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn passfraseColumn {
+            public global::System.Data.DataColumn pass_hashColumn {
                 get {
-                    return this.columnpassfrase;
+                    return this.columnpass_hash;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace ExampleSQLApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public usersRow AddusersRow(string nickname, string passfrase) {
+            public usersRow AddusersRow(string nickname, string pass_hash) {
                 usersRow rowusersRow = ((usersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nickname,
-                        passfrase};
+                        pass_hash};
                 rowusersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowusersRow);
                 return rowusersRow;
@@ -397,7 +397,7 @@ namespace ExampleSQLApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnnickname = base.Columns["nickname"];
-                this.columnpassfrase = base.Columns["passfrase"];
+                this.columnpass_hash = base.Columns["pass_hash"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -405,12 +405,12 @@ namespace ExampleSQLApp {
             private void InitClass() {
                 this.columnnickname = new global::System.Data.DataColumn("nickname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnickname);
-                this.columnpassfrase = new global::System.Data.DataColumn("passfrase", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpassfrase);
+                this.columnpass_hash = new global::System.Data.DataColumn("pass_hash", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpass_hash);
                 this.columnnickname.AllowDBNull = false;
                 this.columnnickname.MaxLength = 50;
-                this.columnpassfrase.AllowDBNull = false;
-                this.columnpassfrase.MaxLength = 150;
+                this.columnpass_hash.AllowDBNull = false;
+                this.columnpass_hash.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -564,12 +564,12 @@ namespace ExampleSQLApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string passfrase {
+            public string pass_hash {
                 get {
-                    return ((string)(this[this.tableusers.passfraseColumn]));
+                    return ((string)(this[this.tableusers.pass_hashColumn]));
                 }
                 set {
-                    this[this.tableusers.passfraseColumn] = value;
+                    this[this.tableusers.pass_hashColumn] = value;
                 }
             }
         }
@@ -734,15 +734,15 @@ namespace ExampleSQLApp.miit_localDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "users";
             tableMapping.ColumnMappings.Add("nickname", "nickname");
-            tableMapping.ColumnMappings.Add("passfrase", "passfrase");
+            tableMapping.ColumnMappings.Add("pass_hash", "pass_hash");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[users] ([nickname], [passfrase]) VALUES (@nickname, @passfrase" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[users] ([nickname], [pass_hash]) VALUES (@nickname, @pass_hash" +
                 ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nickname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nickname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passfrase", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passfrase", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass_hash", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass_hash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -758,7 +758,7 @@ namespace ExampleSQLApp.miit_localDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT nickname, passfrase FROM dbo.users";
+            this._commandCollection[0].CommandText = "SELECT nickname, pass_hash FROM dbo.users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -819,18 +819,18 @@ namespace ExampleSQLApp.miit_localDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nickname, string passfrase) {
+        public virtual int Insert(string nickname, string pass_hash) {
             if ((nickname == null)) {
                 throw new global::System.ArgumentNullException("nickname");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nickname));
             }
-            if ((passfrase == null)) {
-                throw new global::System.ArgumentNullException("passfrase");
+            if ((pass_hash == null)) {
+                throw new global::System.ArgumentNullException("pass_hash");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(passfrase));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(pass_hash));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

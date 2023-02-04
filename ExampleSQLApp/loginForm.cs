@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Mysqlx.Notice;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -10,12 +12,15 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test_DB;
 using static ExampleSQLApp.Program;
 
 namespace ExampleSQLApp
 {
     public partial class loginForm : Form
     {
+        DataBase database = new DataBase();
+
 /*        public AppUserData userData = currentUserData;*/
         public loginForm()
         {
@@ -29,6 +34,11 @@ namespace ExampleSQLApp
             this.fieldPasswordInput.Size = new Size(this.fieldPasswordInput.Size.Width,
                 LOGIN_FIELDS_HEIGHT);
         }
+
+/*        private void loginForm_Load(object sender, EventArgs e)
+        {
+            fieldPasswordInput.PasswordChar = '*';
+        }*/
 
         private void labelLoginTopPanel_Click(object sender, EventArgs e)
         {
@@ -77,8 +87,40 @@ namespace ExampleSQLApp
 
         private void loginDataEnter_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
-            Console.WriteLine("[+] Password is: <" + this.fieldPasswordInput.Text + ">.");
+            var username = this.fieldUserNameInput.Text;
+            var user_pass = this.fieldPasswordInput.Text;
+
+            SqlDataAdapter db_adapter = new SqlDataAdapter();
+            DataTable task_data = new DataTable();
+
+            string get_user_data_query = $"SELECT nickname, pass_hash FROM users WHERE nickname = '{username}' AND pass_hash = '{user_pass}'";
+
+            SqlCommand get_data_command = new SqlCommand(get_user_data_query, database.getConnection());
+
+            db_adapter.SelectCommand = get_data_command;
+            db_adapter.Fill(task_data);
+
+            if(task_data.Rows.Count == 1)
+            {
+                MessageBox.Show("ACCESS GRANTED", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connectionTestForm task_data_Form = new connectionTestForm();
+                this.Hide();
+                task_data_Form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Имя или пароль пользователя неверны.", "Unknown user", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (username == null || user_pass == null) {
+                Console.WriteLine("No data");
+            }
+            else
+            {
+                Console.WriteLine("[+] Username is: <" + this.fieldUserNameInput.Text + ">.");
+                Console.WriteLine("[+] Password is: <" + this.fieldPasswordInput.Text + ">.");
+            }
             Close();
         }
 
