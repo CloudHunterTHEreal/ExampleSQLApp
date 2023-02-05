@@ -12,16 +12,18 @@ namespace test_DB
 {
     internal class DataBase
     {
-        readonly SqlConnection connection = new SqlConnection(@"Data Source=novice\sqlexpress;Initial Catalog=miit_local;Integrated Security=True");
+        readonly SqlConnection connection = new SqlConnection(@"Data Source=novice\sqlexpress;
+                                                                Initial Catalog=miit_local;
+                                                                Integrated Security=True");
 
-        public void openConnection(string connectionString)
+        public void OpenConnection(string connectionString)
         {
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
                 Console.WriteLine("Connection open");
         }
 
-        public void closeConnection(string connectionString)
+        public void CloseConnection(string connectionString)
         {
             if (connection.State == System.Data.ConnectionState.Open)
                 connection.Close();

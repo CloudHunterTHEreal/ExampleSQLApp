@@ -48,6 +48,7 @@
             // 
             // tabLogin
             // 
+            this.tabLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(201)))), ((int)(((byte)(128)))));
             this.tabLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabLogin.Location = new System.Drawing.Point(4, 47);
             this.tabLogin.Name = "tabLogin";
@@ -55,11 +56,11 @@
             this.tabLogin.Size = new System.Drawing.Size(967, 455);
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "Вход в систему";
-            this.tabLogin.UseVisualStyleBackColor = true;
             this.tabLogin.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabNewUser
             // 
+            this.tabNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(201)))), ((int)(((byte)(128)))));
             this.tabNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
             this.tabNewUser.Location = new System.Drawing.Point(4, 47);
             this.tabNewUser.Name = "tabNewUser";
@@ -67,15 +68,16 @@
             this.tabNewUser.Size = new System.Drawing.Size(967, 455);
             this.tabNewUser.TabIndex = 1;
             this.tabNewUser.Text = "Новый пользователь";
-            this.tabNewUser.UseVisualStyleBackColor = true;
             // 
             // startForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(201)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(975, 531);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "startForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "startForm";

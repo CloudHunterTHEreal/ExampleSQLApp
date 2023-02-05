@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.users_dataGridView = new System.Windows.Forms.DataGridView();
+            this.nicknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passhashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.miit_localDataSet = new ExampleSQLApp.miit_localDataSet();
             this.usersTableAdapter = new ExampleSQLApp.miit_localDataSetTableAdapters.usersTableAdapter();
-            this.nicknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passhashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.users_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.miit_localDataSet)).BeginInit();
@@ -67,7 +67,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.users_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.users_dataGridView.Location = new System.Drawing.Point(140, 132);
+            this.users_dataGridView.Location = new System.Drawing.Point(140, 139);
             this.users_dataGridView.Name = "users_dataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -82,20 +82,6 @@
             this.users_dataGridView.Size = new System.Drawing.Size(541, 150);
             this.users_dataGridView.TabIndex = 0;
             this.users_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_dataGridView_CellContentClick);
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.miit_localDataSet;
-            // 
-            // miit_localDataSet
-            // 
-            this.miit_localDataSet.DataSetName = "miit_localDataSet";
-            this.miit_localDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
             // 
             // nicknameDataGridViewTextBoxColumn
             // 
@@ -112,6 +98,20 @@
             this.passhashDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.passhashDataGridViewTextBoxColumn.Name = "passhashDataGridViewTextBoxColumn";
             this.passhashDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.miit_localDataSet;
+            // 
+            // miit_localDataSet
+            // 
+            this.miit_localDataSet.DataSetName = "miit_localDataSet";
+            this.miit_localDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
             // 
             // connectionTestForm
             // 

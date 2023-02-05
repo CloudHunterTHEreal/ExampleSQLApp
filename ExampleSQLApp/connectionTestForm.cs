@@ -13,7 +13,6 @@ namespace ExampleSQLApp
 {
     public partial class connectionTestForm : Form
     {
-        DataBase  database = new DataBase();
         public connectionTestForm()
         {
             InitializeComponent();
