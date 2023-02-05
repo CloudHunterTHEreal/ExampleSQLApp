@@ -12,6 +12,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using test_DB;
 using static ExampleSQLApp.Program;
 
@@ -48,8 +49,6 @@ namespace ExampleSQLApp
 
         private void labelCloseLoginForm_Click(object sender, EventArgs e)
         {
-            /*            Console.WriteLine("[info] Current user's role is: <" + currentUserData.userRole + ">");
-            */
             Console.WriteLine("[!] Form <" + this.Text + "> closed by user.");
             this.Close();
         }
@@ -57,14 +56,11 @@ namespace ExampleSQLApp
         private void labelCloseLoginForm_MouseHover(object sender, EventArgs e)
         {
             labelCloseLoginFormBottom.ForeColor = Color.Red;
-            //            Console.WriteLine("[!] Mouse over <" + labelCloseLoginFormBottom.ForeColor.ToString() + ">.");
         }
 
         private void labelCloseLoginFormBottom_MouseLeave(object sender, EventArgs e)
         {
             labelCloseLoginFormBottom.ForeColor = Color.FromArgb(193, 191, 198);
-            //            Console.WriteLine("[!] Mouse over <" + labelCloseLoginFormBottom.ForeColor.ToString() + ">.");
-
         }
 
         Point startPressedLeftButtonPoint;
@@ -84,36 +80,44 @@ namespace ExampleSQLApp
 
         private void fieldUserNameInput_TextChanged(object sender, EventArgs e)
         {
-            this.fieldUserNameInput.ForeColor = Color.Red;
+
         }
 
         private bool IsPasswordCorrect(string name, string pass)
         {
-            string get_user_data_query = $"SELECT nickname, pass_hash, role_name FROM users WHERE nickname = '{name}' AND pass_hash = '{pass}'";
-            SqlCommand get_data_command = new SqlCommand(get_user_data_query, database.getConnection());
-            db_adapter.SelectCommand = get_data_command;
-            db_adapter.Fill(currentDataFetch);
             string current_role = null;
 
-            if (currentDataFetch.Rows.Count != 1)
-            {
-                Console.WriteLine("[!] Access request rejected for: <" + name + ">");
-                Console.WriteLine("[!] With password: <" + pass + ">");
-                Console.WriteLine("Fetch has " + currentDataFetch.Rows.Count.ToString() + " rows.");
+            string get_user_data_query = $"SELECT nickname, pass_hash, role_name FROM users WHERE nickname = '{name}' AND pass_hash = '{pass}'";
+            SqlCommand get_data_command = new SqlCommand(get_user_data_query, database.getConnection());
 
-                return false;
-            }
-            else
+            database.OpenConnection();
+
+            db_adapter.SelectCommand = get_data_command;
+            db_adapter.Fill(currentDataFetch);
+
+            if (currentDataFetch.Rows.Count == 1)
             {
                 current_role = currentDataFetch.Rows[0].Field<string>("role_name");
-                MessageBox.Show("Доступ открыт, не забудьте код для обработки события!", "Доступ предоставлен", 
+                MessageBox.Show("Доступ открыт, не забудьте код для обработки события!", "Доступ предоставлен",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Console.WriteLine("[>] Access granted to: <" + name + ">");
                 Console.WriteLine("[>] With role: <" + current_role + ">");
-
-                return true;
             }
+            else
+            {
+                Console.WriteLine("[!] Access request rejected for: <" + name + ">");
+                Console.WriteLine("[!] With password: <" + pass + ">");
+                Console.WriteLine("Fetch has " + currentDataFetch.Rows.Count.ToString() + " rows.");
+            }
+
+            database.CloseConnection();
+
+            if (current_role is null)
+            {
+                return false;
+            }
+            return true;
         }
 
  /*       private void openMainForm()
@@ -130,13 +134,14 @@ namespace ExampleSQLApp
             var username = fieldUserNameInput.Text;
             var user_pass = fieldPasswordInput.Text;
 
-            while (!IsPasswordCorrect(username, user_pass))
+            if (!IsPasswordCorrect(username, user_pass))
             {
                 MessageBox.Show("Имя или пароль пользователя неверны.", "Доступ запрещён", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                //this.fieldUserNameInput.Focus();
-/*                fieldUserNameInput.Text = username;
-                username = fieldUserNameInput.Text;
-                user_pass = fieldPasswordInput.Text;*/
+                this.fieldUserNameInput.Text = username;
+                this.fieldPasswordInput.Text = user_pass;
+                this.fieldUserNameInput.Focus();
+
+                return;
             }
 
             connectionTestForm task_data_Form = new connectionTestForm();

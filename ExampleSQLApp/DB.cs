@@ -16,14 +16,16 @@ namespace test_DB
                                                                 Initial Catalog=miit_local;
                                                                 Integrated Security=True");
 
-        public void OpenConnection(string connectionString)
+/*        public void OpenConnection(string connectionString)*/
+        public void OpenConnection()
         {
             if (connection.State == System.Data.ConnectionState.Closed)
                 connection.Open();
                 Console.WriteLine("Connection open");
         }
 
-        public void CloseConnection(string connectionString)
+/*        public void CloseConnection(string connectionString)*/
+        public void CloseConnection()
         {
             if (connection.State == System.Data.ConnectionState.Open)
                 connection.Close();
