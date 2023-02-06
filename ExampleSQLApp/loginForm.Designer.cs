@@ -32,9 +32,10 @@ namespace ExampleSQLApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.loginMainPanel = new System.Windows.Forms.Panel();
             this.loginButtonsPanel = new System.Windows.Forms.Panel();
-            this.loginDataDrop = new System.Windows.Forms.Button();
+            this.loginNewUser = new System.Windows.Forms.Button();
             this.loginDataEnter = new System.Windows.Forms.Button();
             this.fieldPasswordInput = new System.Windows.Forms.TextBox();
             this.iconPassword = new System.Windows.Forms.PictureBox();
@@ -70,28 +71,29 @@ namespace ExampleSQLApp
             // 
             // loginButtonsPanel
             // 
-            this.loginButtonsPanel.Controls.Add(this.loginDataDrop);
+            this.loginButtonsPanel.Controls.Add(this.loginNewUser);
             this.loginButtonsPanel.Controls.Add(this.loginDataEnter);
             this.loginButtonsPanel.Location = new System.Drawing.Point(170, 316);
             this.loginButtonsPanel.Name = "loginButtonsPanel";
             this.loginButtonsPanel.Size = new System.Drawing.Size(300, 72);
             this.loginButtonsPanel.TabIndex = 5;
             // 
-            // loginDataDrop
+            // loginNewUser
             // 
-            this.loginDataDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.loginDataDrop.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211651_close_round_icon;
-            this.loginDataDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.loginDataDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginDataDrop.Location = new System.Drawing.Point(154, 4);
-            this.loginDataDrop.Name = "loginDataDrop";
-            this.loginDataDrop.Size = new System.Drawing.Size(143, 63);
-            this.loginDataDrop.TabIndex = 1;
-            this.loginDataDrop.UseVisualStyleBackColor = true;
+            this.loginNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginNewUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginNewUser.BackgroundImage")));
+            this.loginNewUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginNewUser.Location = new System.Drawing.Point(154, 4);
+            this.loginNewUser.Name = "loginNewUser";
+            this.loginNewUser.Size = new System.Drawing.Size(143, 63);
+            this.loginNewUser.TabIndex = 1;
+            this.loginNewUser.UseVisualStyleBackColor = true;
+            this.loginNewUser.Click += new System.EventHandler(this.loginNewUser_Click);
             // 
             // loginDataEnter
             // 
-            this.loginDataEnter.BackgroundImage = global::ExampleSQLApp.Properties.Resources._211643_checkmark_round_icon;
+            this.loginDataEnter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginDataEnter.BackgroundImage")));
             this.loginDataEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.loginDataEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginDataEnter.Location = new System.Drawing.Point(4, 4);
@@ -131,7 +133,6 @@ namespace ExampleSQLApp
             this.fieldUserNameInput.Size = new System.Drawing.Size(418, 62);
             this.fieldUserNameInput.TabIndex = 2;
             this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.fieldUserNameInput.TextChanged += new System.EventHandler(this.fieldUserNameInput_TextChanged_1);
             // 
             // iconUserName
             // 
@@ -152,7 +153,7 @@ namespace ExampleSQLApp
             this.loginTopPanel.Location = new System.Drawing.Point(0, 0);
             this.loginTopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.loginTopPanel.Name = "loginTopPanel";
-            this.loginTopPanel.Size = new System.Drawing.Size(633, 101);
+            this.loginTopPanel.Size = new System.Drawing.Size(641, 101);
             this.loginTopPanel.TabIndex = 0;
             // 
             // labelCloseLoginFormBottom
@@ -185,7 +186,7 @@ namespace ExampleSQLApp
             this.labelLoginTopPanel.Location = new System.Drawing.Point(0, 0);
             this.labelLoginTopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.labelLoginTopPanel.Name = "labelLoginTopPanel";
-            this.labelLoginTopPanel.Size = new System.Drawing.Size(633, 101);
+            this.labelLoginTopPanel.Size = new System.Drawing.Size(641, 101);
             this.labelLoginTopPanel.TabIndex = 0;
             this.labelLoginTopPanel.Text = "Авторизация";
             this.labelLoginTopPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -196,8 +197,11 @@ namespace ExampleSQLApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 400);
+            this.ControlBox = false;
             this.Controls.Add(this.loginMainPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loginForm";
             this.loginMainPanel.ResumeLayout(false);
             this.loginMainPanel.PerformLayout();
@@ -221,7 +225,7 @@ namespace ExampleSQLApp
         private System.Windows.Forms.TextBox fieldPasswordInput;
         private System.Windows.Forms.PictureBox iconPassword;
         private System.Windows.Forms.TextBox fieldUserNameInput;
-        private System.Windows.Forms.Button loginDataDrop;
+        private System.Windows.Forms.Button loginNewUser;
         private System.Windows.Forms.Button loginDataEnter;
     }
 }

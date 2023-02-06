@@ -15,14 +15,15 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using test_DB;
 using static ExampleSQLApp.Program;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ExampleSQLApp
 {
     public partial class loginForm : Form
     {
-        DataBase database = new DataBase();
-        SqlDataAdapter db_adapter = new SqlDataAdapter();
-        DataTable currentDataFetch = new DataTable();
+        internal DataBase database = new DataBase();
+        internal SqlDataAdapter db_adapter = new SqlDataAdapter();
+        internal DataTable currentDataFetch = new DataTable();
 
         public loginForm()
         {
@@ -36,11 +37,6 @@ namespace ExampleSQLApp
             this.fieldPasswordInput.Size = new Size(this.fieldPasswordInput.Size.Width,
                 LOGIN_FIELDS_HEIGHT);
         }
-
-        /*        private void loginForm_Load(object sender, EventArgs e)
-                {
-                    fieldPasswordInput.PasswordChar = '*';
-                }*/
 
         private void labelLoginTopPanel_Click(object sender, EventArgs e)
         {
@@ -98,17 +94,15 @@ namespace ExampleSQLApp
             if (currentDataFetch.Rows.Count == 1)
             {
                 current_role = currentDataFetch.Rows[0].Field<string>("role_name");
+                Console.WriteLine("[>] Access granted to: <" + name + "> as <" + current_role + ">");
+
                 MessageBox.Show("Доступ открыт, не забудьте код для обработки события!", "Доступ предоставлен",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                Console.WriteLine("[>] Access granted to: <" + name + ">");
-                Console.WriteLine("[>] With role: <" + current_role + ">");
             }
             else
             {
-                Console.WriteLine("[!] Access request rejected for: <" + name + ">");
-                Console.WriteLine("[!] With password: <" + pass + ">");
-                Console.WriteLine("Fetch has " + currentDataFetch.Rows.Count.ToString() + " rows.");
+                Console.WriteLine("[!] Access request rejected for: <" + name + ">, password: <" + pass + ">");
+/*                Console.WriteLine("Fetch has " + currentDataFetch.Rows.Count.ToString() + " rows.");*/
             }
 
             database.CloseConnection();
@@ -144,8 +138,8 @@ namespace ExampleSQLApp
                 return;
             }
 
-            connectionTestForm task_data_Form = new connectionTestForm();
             this.Hide();
+            connectionTestForm task_data_Form = new connectionTestForm();
             task_data_Form.ShowDialog();
             this.Show();
             this.Close();
@@ -156,9 +150,19 @@ namespace ExampleSQLApp
 
         }
 
-        private void fieldUserNameInput_TextChanged_1(object sender, EventArgs e)
+        private void loginDataDrop_Click(object sender, EventArgs e)
         {
+            this.fieldUserNameInput.Text = "";
+            this.fieldPasswordInput.Text = "";
+            this.fieldUserNameInput.Focus();
+        }
 
+        private void loginNewUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+/*            newUserForm newUserForm = new newUserForm();
+            newUserForm.ShowDialog();*/
+            this.Show();
         }
     }
 }
