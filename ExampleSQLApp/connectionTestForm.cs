@@ -20,10 +20,26 @@ namespace ExampleSQLApp
 
         private void connectForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "miit_local_User_Auth_n_Role_Data.roles". При необходимости она может быть перемещена или удалена.
+            this.rolesTableAdapter.Fill(this.miit_local_User_Auth_n_Role_Data.roles);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "miit_localDataSet.users". При необходимости она может быть перемещена или удалена.
             this.usersTableAdapter.Fill(this.miit_localDataSet.users);
+            var fake_list = new List<string> 
+            { "1 - Один", "2 - Два", "3 - Три", "4 - Четыре", "5 - Пять", "6 - Шесть", "7 - Семь" };
 
+            /*            var new_list = fake_list.Select(x => x.Where(x.EndsWith())Contains("П"));*/
+            var new_list = fake_list.OrderBy(x => x);
+
+            foreach (var item in new_list)
+            {
+                listBox.Items.Add(item);
+            }
         }
+
+/*        private object IListSource(List<string> fake_list)
+        {
+            throw new NotImplementedException();
+        }*/
 
         private void users_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>miit_localDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="miit_local_User_Auth_n_Role_Data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>miit_local_User_Auth_n_Role_Data.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="connectionTestForm.resx">
@@ -96,6 +101,17 @@
     </None>
     <None Include="miit_localDataSet.xss">
       <DependentUpon>miit_localDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="miit_local_User_Auth_n_Role_Data.xsc">
+      <DependentUpon>miit_local_User_Auth_n_Role_Data.xsd</DependentUpon>
+    </None>
+    <None Include="miit_local_User_Auth_n_Role_Data.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>miit_local_User_Auth_n_Role_Data.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="miit_local_User_Auth_n_Role_Data.xss">
+      <DependentUpon>miit_local_User_Auth_n_Role_Data.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
