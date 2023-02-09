@@ -21,14 +21,15 @@ namespace ExampleSQLApp
         private void connectForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "miit_local_User_Auth_n_Role_Data.roles". При необходимости она может быть перемещена или удалена.
-            this.rolesTableAdapter.Fill(this.miit_local_User_Auth_n_Role_Data.roles);
+            rolesTableAdapter.Fill(miit_local_User_Auth_n_Role_Data.roles);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "miit_localDataSet.users". При необходимости она может быть перемещена или удалена.
-            this.usersTableAdapter.Fill(this.miit_localDataSet.users);
+            usersTableAdapter.Fill(miit_localDataSet.users);
             var fake_list = new List<string> 
             { "1 - Один", "2 - Два", "3 - Три", "4 - Четыре", "5 - Пять", "6 - Шесть", "7 - Семь" };
 
-            /*            var new_list = fake_list.Select(x => x.Where(x.EndsWith())Contains("П"));*/
-            var new_list = fake_list.OrderBy(x => x.Count());
+/*            var new_list = fake_list.Select(x => x.Where(x.EndsWith())Contains("П"));*/
+            /*var new_list = fake_list.OrderBy(x => x.Count());*/
+            var new_list = miit_local_User_Auth_n_Role_Data.roles.OrderBy(x => x.role_name.ToString());
 
             foreach (var item in new_list)
             {
