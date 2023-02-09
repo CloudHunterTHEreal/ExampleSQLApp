@@ -28,7 +28,7 @@ namespace ExampleSQLApp
             { "1 - Один", "2 - Два", "3 - Три", "4 - Четыре", "5 - Пять", "6 - Шесть", "7 - Семь" };
 
             /*            var new_list = fake_list.Select(x => x.Where(x.EndsWith())Contains("П"));*/
-            var new_list = fake_list.OrderBy(x => x);
+            var new_list = fake_list.OrderBy(x => x.Count());
 
             foreach (var item in new_list)
             {
