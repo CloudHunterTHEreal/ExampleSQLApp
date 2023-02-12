@@ -33,7 +33,7 @@ namespace ExampleSQLApp
 
             foreach (var item in new_list)
             {
-                listBox.Items.Add(item);
+                listBox.Items.Add(item.role_name);
             }
         }
 
@@ -43,6 +43,11 @@ namespace ExampleSQLApp
         }*/
 
         private void users_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
