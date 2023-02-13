@@ -15,6 +15,15 @@ namespace ExampleSQLApp
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
+        static public DialogResult IsExitAccept()
+        {
+            DialogResult requestResult = MessageBox.Show("        Выйти?",
+                                                         "Завершение работы",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Question);
+            return requestResult;
+        }
+
         static void Main()
         {
             Application.EnableVisualStyles();

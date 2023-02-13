@@ -87,7 +87,7 @@ namespace ExampleSQLApp
             this.loginNewUser.Location = new System.Drawing.Point(154, 4);
             this.loginNewUser.Name = "loginNewUser";
             this.loginNewUser.Size = new System.Drawing.Size(143, 63);
-            this.loginNewUser.TabIndex = 1;
+            this.loginNewUser.TabIndex = 3;
             this.loginNewUser.UseVisualStyleBackColor = true;
             this.loginNewUser.Click += new System.EventHandler(this.loginNewUser_Click);
             // 
@@ -99,7 +99,7 @@ namespace ExampleSQLApp
             this.loginDataEnter.Location = new System.Drawing.Point(4, 4);
             this.loginDataEnter.Name = "loginDataEnter";
             this.loginDataEnter.Size = new System.Drawing.Size(143, 63);
-            this.loginDataEnter.TabIndex = 0;
+            this.loginDataEnter.TabIndex = 2;
             this.loginDataEnter.UseVisualStyleBackColor = true;
             this.loginDataEnter.Click += new System.EventHandler(this.loginDataEnter_Click);
             // 
@@ -110,9 +110,10 @@ namespace ExampleSQLApp
             this.fieldPasswordInput.Location = new System.Drawing.Point(159, 208);
             this.fieldPasswordInput.Name = "fieldPasswordInput";
             this.fieldPasswordInput.Size = new System.Drawing.Size(418, 62);
-            this.fieldPasswordInput.TabIndex = 4;
+            this.fieldPasswordInput.TabIndex = 1;
             this.fieldPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.fieldPasswordInput.UseSystemPasswordChar = true;
+            this.fieldPasswordInput.Enter += new System.EventHandler(this.fieldPasswordInput_Enter);
             this.fieldPasswordInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fieldPasswordInput_KeyUp);
             // 
             // iconPassword
@@ -132,9 +133,10 @@ namespace ExampleSQLApp
             this.fieldUserNameInput.Location = new System.Drawing.Point(159, 116);
             this.fieldUserNameInput.Name = "fieldUserNameInput";
             this.fieldUserNameInput.Size = new System.Drawing.Size(418, 62);
-            this.fieldUserNameInput.TabIndex = 2;
+            this.fieldUserNameInput.TabIndex = 0;
             this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.fieldUserNameInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fieldUserNameInput_KeyUp);
+            this.fieldUserNameInput.Leave += new System.EventHandler(this.fieldUserNameInput_Leave);
             // 
             // iconUserName
             // 
@@ -170,7 +172,7 @@ namespace ExampleSQLApp
             this.labelCloseLoginFormBottom.Location = new System.Drawing.Point(571, 0);
             this.labelCloseLoginFormBottom.Name = "labelCloseLoginFormBottom";
             this.labelCloseLoginFormBottom.Size = new System.Drawing.Size(62, 65);
-            this.labelCloseLoginFormBottom.TabIndex = 1;
+            this.labelCloseLoginFormBottom.TabIndex = 4;
             this.labelCloseLoginFormBottom.Text = "X";
             this.labelCloseLoginFormBottom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelCloseLoginFormBottom.Click += new System.EventHandler(this.labelCloseLoginForm_Click);

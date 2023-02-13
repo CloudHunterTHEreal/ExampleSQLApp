@@ -167,16 +167,18 @@ namespace ExampleSQLApp
 
         private void fieldUserNameInput_KeyUp(object sender, KeyEventArgs e)
         {
-            DialogResult IsExitAccept()
-            {
-                DialogResult requestResult = MessageBox.Show("Выйти?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                return requestResult;
-            }
+            Control ctl;
+            ctl = (Control)sender;
+            
 
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    fieldPasswordInput.Focus();
+                    MessageBox.Show($"name fiel key pressed");
+                    ActiveControl = GetNextControl(ActiveControl, true);
+                    ActiveControl.Focus();
+                    /*                    ActiveControl;*/
+                    /*                    fieldPasswordInput.Focus();*/
                     break;
 
                 case Keys.Escape:
@@ -185,28 +187,33 @@ namespace ExampleSQLApp
                         if (IsExitAccept() == DialogResult.Yes)
                             this.Close();
                         else
-                            break;    
+                            break;
                     }
                     else
-                    {
                         fieldUserNameInput.Text = "";
-                    }
-                    fieldPasswordInput.Focus();
                     break;
+
+                /*                    SelectNextControl(ActiveControl, true, false, false, true);
+                                    break;*/
 
                 default:
                     break;
-            }
-            if (e.KeyCode == Keys.Enter)
-            {
-                fieldPasswordInput.Focus();
-            }
-            
+            }        
         }
 
         private void fieldPasswordInput_KeyUp(object sender, KeyEventArgs e)
         {
-            loginDataEnter.Focus();
+/*            loginDataEnter.Focus();*/
+        }
+
+        private void fieldUserNameInput_Leave(object sender, EventArgs e)
+        {
+            MessageBox.Show("Потеря фокуса ИМЯ");
+        }
+
+        private void fieldPasswordInput_Enter(object sender, EventArgs e)
+        {
+            MessageBox.Show("Получение фокуса ПАРОЛЬ");
         }
     }
 }
