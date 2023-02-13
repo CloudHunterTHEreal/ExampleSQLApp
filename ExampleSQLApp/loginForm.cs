@@ -164,5 +164,49 @@ namespace ExampleSQLApp
             newUserForm.ShowDialog();*/
             this.Show();
         }
+
+        private void fieldUserNameInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            DialogResult IsExitAccept()
+            {
+                DialogResult requestResult = MessageBox.Show("Выйти?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                return requestResult;
+            }
+
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    fieldPasswordInput.Focus();
+                    break;
+
+                case Keys.Escape:
+                    if (fieldUserNameInput.Text.Length == 0)
+                    {
+                        if (IsExitAccept() == DialogResult.Yes)
+                            this.Close();
+                        else
+                            break;    
+                    }
+                    else
+                    {
+                        fieldUserNameInput.Text = "";
+                    }
+                    fieldPasswordInput.Focus();
+                    break;
+
+                default:
+                    break;
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                fieldPasswordInput.Focus();
+            }
+            
+        }
+
+        private void fieldPasswordInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            loginDataEnter.Focus();
+        }
     }
 }

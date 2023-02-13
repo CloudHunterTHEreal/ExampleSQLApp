@@ -113,6 +113,7 @@ namespace ExampleSQLApp
             this.fieldPasswordInput.TabIndex = 4;
             this.fieldPasswordInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.fieldPasswordInput.UseSystemPasswordChar = true;
+            this.fieldPasswordInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fieldPasswordInput_KeyUp);
             // 
             // iconPassword
             // 
@@ -133,6 +134,7 @@ namespace ExampleSQLApp
             this.fieldUserNameInput.Size = new System.Drawing.Size(418, 62);
             this.fieldUserNameInput.TabIndex = 2;
             this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fieldUserNameInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fieldUserNameInput_KeyUp);
             // 
             // iconUserName
             // 
