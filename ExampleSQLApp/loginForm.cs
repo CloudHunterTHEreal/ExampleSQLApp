@@ -169,14 +169,15 @@ namespace ExampleSQLApp
         {
             Control ctl;
             ctl = (Control)sender;
-            
+            /*MessageBox.Show($"{ctl.Name.ToString()}");*/            
 
             switch (e.KeyCode)
             {
                 case Keys.Enter:
                     MessageBox.Show($"name fiel key pressed");
-                    ActiveControl = GetNextControl(ActiveControl, true);
-                    ActiveControl.Focus();
+                    ActiveControl = GetNextControl(ctl, true);
+                    MessageBox.Show($"{ActiveControl.Name.ToString()}");
+                    /*                    ActiveControl.;*/
                     /*                    ActiveControl;*/
                     /*                    fieldPasswordInput.Focus();*/
                     break;
