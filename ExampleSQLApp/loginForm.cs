@@ -38,6 +38,57 @@ namespace ExampleSQLApp
                 LOGIN_FIELDS_HEIGHT);
         }
 
+        void fieldNameEscEvent()
+        {
+            if (fieldUserNameInput.Text.Length == 0)
+            {
+                if (IsExitAccept() == DialogResult.Yes)
+                    this.Close();
+            }
+            else
+                fieldUserNameInput.Text = "";
+        }
+
+        void fieldPasswordEscEvent()
+        {
+            MessageBox.Show("Fake fieldPassword processing");
+            if (fieldPasswordInput.Text.Length == 0)
+                ActiveControl = GetNextControl(ActiveControl, false);
+            else
+                fieldPasswordInput.Text = "";
+        }
+
+        void inputFieldsKey_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    ActiveControl = GetNextControl(ActiveControl, true);
+                    break;
+
+                case Keys.Escape:
+                    // Проверяем событие поля с каким значением TabIndex надо обработать
+                    // 0 - fieldUserNameInput
+                    // 1 - fieldPasswordInput
+                    switch (ActiveControl.TabIndex)
+                    {
+                        case 0:
+                            fieldNameEscEvent();
+                            break;
+                        case 1:
+                            fieldPasswordEscEvent();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+            MessageBox.Show($"Current tabIndex = {ActiveControl.TabIndex}");
+        }
+
         private void labelLoginTopPanel_Click(object sender, EventArgs e)
         {
 
@@ -72,11 +123,6 @@ namespace ExampleSQLApp
                 this.Left += e.X - startPressedLeftButtonPoint.X;
                 this.Top += e.Y - startPressedLeftButtonPoint.Y;
             }
-        }
-
-        private void fieldUserNameInput_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private bool IsPasswordCorrect(string name, string pass)
@@ -145,11 +191,6 @@ namespace ExampleSQLApp
             this.Close();
         }
 
-        private void loginMainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void loginDataDrop_Click(object sender, EventArgs e)
         {
             this.fieldUserNameInput.Text = "";
@@ -167,54 +208,59 @@ namespace ExampleSQLApp
 
         private void fieldUserNameInput_KeyUp(object sender, KeyEventArgs e)
         {
-            Control ctl;
-            ctl = (Control)sender;
-            /*MessageBox.Show($"{ctl.Name.ToString()}");*/            
-
-            switch (e.KeyCode)
+            inputFieldsKey_KeyUp(sender, e);
+/*            switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    MessageBox.Show($"name fiel key pressed");
-                    ActiveControl = GetNextControl(ctl, true);
-                    MessageBox.Show($"{ActiveControl.Name.ToString()}");
-                    /*                    ActiveControl.;*/
-                    /*                    ActiveControl;*/
-                    /*                    fieldPasswordInput.Focus();*/
+                    ActiveControl = GetNextControl(ActiveControl, true);
                     break;
-
+                    
                 case Keys.Escape:
-                    if (fieldUserNameInput.Text.Length == 0)
+                    // Проверяем событие поля с каким значением TabIndex надо обработать
+                    // 0 - fieldUserNameInput
+                    // 1 - fieldPasswordInput
+                    switch (ActiveControl.TabIndex)
+                    {
+                        case 0:
+                            fieldNameEscEvent();
+                            break;
+                        case 1:
+                            fieldPasswordEscEvent(); 
+                            break;
+                        default: 
+                            break;
+                    }
+                    break;
+*//*                    if (fieldUserNameInput.Text.Length == 0)
                     {
                         if (IsExitAccept() == DialogResult.Yes)
                             this.Close();
                         else
                             break;
                     }
-                    else
-                        fieldUserNameInput.Text = "";
-                    break;
-
-                /*                    SelectNextControl(ActiveControl, true, false, false, true);
-                                    break;*/
-
+                    fieldUserNameInput.Text = "";
+                    break;*//*
                 default:
                     break;
-            }        
+            }*/
         }
 
         private void fieldPasswordInput_KeyUp(object sender, KeyEventArgs e)
         {
-/*            loginDataEnter.Focus();*/
+            inputFieldsKey_KeyUp(sender, e);
         }
 
         private void fieldUserNameInput_Leave(object sender, EventArgs e)
         {
-            MessageBox.Show("Потеря фокуса ИМЯ");
         }
 
         private void fieldPasswordInput_Enter(object sender, EventArgs e)
         {
-            MessageBox.Show("Получение фокуса ПАРОЛЬ");
+        }
+
+        private void fieldUserNameInput_Enter(object sender, EventArgs e)
+        {
+/*            MessageBox.Show($"ActiveControl TabIndex = {ActiveControl.TabIndex}");*/
         }
     }
 }

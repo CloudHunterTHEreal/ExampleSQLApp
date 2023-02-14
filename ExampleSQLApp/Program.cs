@@ -15,6 +15,7 @@ namespace ExampleSQLApp
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
+
         static public DialogResult IsExitAccept()
         {
             DialogResult requestResult = MessageBox.Show("        Выйти?",

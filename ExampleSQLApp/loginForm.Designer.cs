@@ -65,7 +65,6 @@ namespace ExampleSQLApp
             this.loginMainPanel.Name = "loginMainPanel";
             this.loginMainPanel.Size = new System.Drawing.Size(641, 400);
             this.loginMainPanel.TabIndex = 0;
-            this.loginMainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginMainPanel_Paint);
             this.loginMainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseDown);
             this.loginMainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loginMainPanel_MouseMove);
             // 
@@ -135,6 +134,7 @@ namespace ExampleSQLApp
             this.fieldUserNameInput.Size = new System.Drawing.Size(418, 62);
             this.fieldUserNameInput.TabIndex = 0;
             this.fieldUserNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fieldUserNameInput.Enter += new System.EventHandler(this.fieldUserNameInput_Enter);
             this.fieldUserNameInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fieldUserNameInput_KeyUp);
             this.fieldUserNameInput.Leave += new System.EventHandler(this.fieldUserNameInput_Leave);
             // 
@@ -158,7 +158,7 @@ namespace ExampleSQLApp
             this.loginTopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.loginTopPanel.Name = "loginTopPanel";
             this.loginTopPanel.Size = new System.Drawing.Size(641, 101);
-            this.loginTopPanel.TabIndex = 0;
+            this.loginTopPanel.TabIndex = 999;
             // 
             // labelCloseLoginFormBottom
             // 
@@ -191,9 +191,10 @@ namespace ExampleSQLApp
             this.labelLoginTopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.labelLoginTopPanel.Name = "labelLoginTopPanel";
             this.labelLoginTopPanel.Size = new System.Drawing.Size(641, 101);
-            this.labelLoginTopPanel.TabIndex = 0;
+            this.labelLoginTopPanel.TabIndex = 999;
             this.labelLoginTopPanel.Text = "Авторизация";
             this.labelLoginTopPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelLoginTopPanel.UseCompatibleTextRendering = true;
             this.labelLoginTopPanel.Click += new System.EventHandler(this.labelLoginTopPanel_Click);
             // 
             // loginForm
